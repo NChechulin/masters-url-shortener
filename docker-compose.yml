@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  redis_users:
+    container_name: redis_url
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --replica-read-only no
+    restart: always
+  postgres:
+    container_name: postgres_url
+    image: postgres
+    environment:
+      POSTGRES_USER: urluser
+      POSTGRES_PASSWORD: verysecurepassword
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+  url_shortener:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis_users
