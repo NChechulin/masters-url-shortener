@@ -1,0 +1,26 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.11.2
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [--fix]
+      # Run the formatter.
+      - id: ruff-format
+  - repo: local
+    hooks:
+      - id: requirements
+        name: requirements
+        description: Export production requirements
+        entry: poetry export -o requirements.txt
+        language: python
+        files: "pyproject.toml"
+        pass_filenames: false
+      - id: dev-requirements
+        name: dev-requirements
+        description: Export production and development requirements
+        entry: poetry export --with dev -o requirements-dev.txt
+        language: python
+        files: "pyproject.toml"
+        pass_filenames: false
