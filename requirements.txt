@@ -517,8 +517,9 @@ pyyaml==6.0.2 ; python_version >= "3.10" and python_version < "4.0" \
 redis==5.2.1 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:16f2e22dff21d5125e8481515e386711a34cbec50f0e44413dd7d9c060a54e0f \
     --hash=sha256:ee7e1056b9aea0f04c6c2ed59452947f34c4940ee025f5dd83e6a6418b6989e4
-rsa==4.2 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:aaefa4b84752e3e99bd8333a2e1e3e7a7da64614042bd66f775573424370108a
+rsa==4.9 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:90260d9058e514786967344d0ef75fa8727eed8a7d2e43ce9f4bcf1b536174f7 \
+    --hash=sha256:e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21
 six==1.17.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
