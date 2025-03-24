@@ -1030,8 +1030,9 @@ requests-toolbelt==1.0.0 ; python_version >= "3.10" and python_version < "4.0" \
 requests==2.32.3 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760 \
     --hash=sha256:70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6
-rsa==4.2 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:aaefa4b84752e3e99bd8333a2e1e3e7a7da64614042bd66f775573424370108a
+rsa==4.7 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:69805d6b69f56eb05b62daea3a7dbd7aa44324ad1306445e05da8060232d00f4 \
+    --hash=sha256:a8774e55b59fd9fc893b0d05e9bfc6f47081f46ff5b46f39ccf24631b7be356b
 ruff==0.11.2 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:0397c2672db015be5aa3d4dac54c69aa012429097ff219392c018e21f5085147 \
     --hash=sha256:0c543bf65d5d27240321604cee0633a70c6c25c9a2f2492efa9f6d4b8e4199bb \
