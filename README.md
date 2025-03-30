@@ -12,7 +12,7 @@
 
 ## Deploy
 
-- Demo: https://masters-url-shortener.onrender.com/docs
+- Demo: https://masters-url-shortener.onrender.com/docs (честно потратил N времени чтобы понять что там как с сетями и не до конца уверен что оно норм работает)
 - Local: `docker-compose up -d --build`
 
 ## Api
