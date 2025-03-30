@@ -1,13 +1,15 @@
 version: '3.5'
 
 services:
-  redis_users:
+  redis_url:
     container_name: redis_url
     image: redis:alpine
     ports:
       - "6379:6379"
     command: redis-server --appendonly yes --replica-read-only no
     restart: always
+    networks:
+      - url_network
   postgres:
     container_name: postgres_url
     image: postgres
@@ -17,10 +19,17 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
+    networks:
+      - url_network
   url_shortener:
     build: .
     ports:
       - "8000:8000"
     depends_on:
       - postgres
-      - redis_users
+      - redis_url
+    networks:
+      - url_network
+networks:
+  url_network:
+    driver: bridge
