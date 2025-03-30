@@ -57,7 +57,7 @@ def create_short_link(
     return new_link
 
 
-@router.get("/{short_code}")
+@router.get("/links/{short_code}")
 def redirect(short_code: str, db: Session = Depends(get_db)):
     original_url = redis_client.get(short_code)
     if original_url:
@@ -134,3 +134,22 @@ def statistics(
         raise HTTPException(status_code=403)
 
     return link
+
+
+@router.get("/links/search", response_model=list[LinkDetailsModel])
+def search_links(
+    original_url: str,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_user),
+):
+    """
+    Search for all short URLs created by the current user that match the given original URL.
+    Returns a list of links (or an empty list if none are found).
+    """
+    links = (
+        db.query(Link)
+        .filter(Link.original_url == original_url, Link.user_id == user.id)
+        .all()
+    )
+
+    return links
